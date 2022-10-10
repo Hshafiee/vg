@@ -38,13 +38,9 @@ def root():
         Address		        = str(AddressRow).replace('<span style="color: #006600;">' , "").replace('</span>' , "")
         RowData['socket']   = Address
 
-
-        #vg_hosts_table_id > tbody > tr:nth-child(18) > td:nth-child(2)
-        #vg_hosts_table_id > tbody > tr:nth-child(18) > td:nth-child(2) > span:nth-child(3)
         ServerRow	        = Row.select("td:nth-child(2) > span:nth-child(3)" , attrs={'style':'font-size: 10pt;'})
         ServerIP            = str(ServerRow).replace('<span style="font-size: 10pt;">' , "").replace('</span>' , "").replace('[' , "").replace(']' , "")
 
-        print(str(ServerIP) , " | " , str(Address))
         RowData['server']   = ServerIP
 
         if Address != "None" :
